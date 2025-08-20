@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { loginActions } from "../../actions/loginActions";
 import PropTypes from "prop-types";
@@ -46,6 +46,9 @@ class LoginPage extends React {
                                 <h2>Logowanie</h2>
                                 {loginPending && "Logowanie w trakcie..."}
                                 {userNameError && (
+                                    <div className="small alert alert-danger">Nazwa użytkownika jest wymagana</div>
+                                )}
+                                {passwordError && (
                                     <div className="small alert alert-danger">Hasło jest wymagane</div>
                                 )}
                                 <form name="form" onSubmit={this.handleSubmit}>
