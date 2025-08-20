@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "./loginActionsTypes";
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "../actions/loginActionsTypes";
 
 let user = undefined;
 user = localStorage.getItem("account") === undefined ? null : JSON.parse(localStorage.getItem("account"));

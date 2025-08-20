@@ -4,7 +4,7 @@ import { loginActions } from "../../actions/loginActions";
 import PropTypes from "prop-types";
 import { Row, Col, Container } from "react-bootstrap";
 
-class LoginPage extends React {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,7 +41,7 @@ class LoginPage extends React {
             <Container>
                 <Row>
                     <Col md={{ offset: 4, span: 4 }}>
-                        { isLogged && (
+                        { !isLogged && (
                             <div>
                                 <h2>Logowanie</h2>
                                 {loginPending && "Logowanie w trakcie..."}
