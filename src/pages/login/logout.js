@@ -4,7 +4,7 @@ import { Row, Col, Container } from "react-bootstrap";
 const LogoutPage = () => (
     <Container>
         <Row>
-            <Col>Zamówienia.</Col>
+            <Col>Wylogowano.</Col>
         </Row>
     </Container>
 );

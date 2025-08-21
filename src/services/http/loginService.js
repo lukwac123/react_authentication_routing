@@ -7,6 +7,12 @@ const login = async (username, password) => {
         {
             username: username,
             password: password
+        },
+        {
+            headers: {
+                "x-api-key": "reqres-free-v1",
+                "Content-Type": "application/json"
+            }
         }
     );
     return response;
