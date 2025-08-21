@@ -14,6 +14,7 @@ import { AboutPage } from "./pages/about/about";
 import { ContactPage } from "./pages/contact/contact";
 import { NotFoundPage } from "./pages/notFound/notFound"
 import "./assets/_all.scss";
+import PrivateRoute from "./components/privateRoute";
 
 class App extends React.Component {
   render() {
@@ -37,13 +38,17 @@ class App extends React.Component {
               <Route path="/" element={<OrdersPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/logout" element={<LogoutPage />} />
-              <Route path="/orders" element={<OrdersPage />} />
-              <Route path="/order/:id" element={<OrderPage />} />
+
+              <Route element={<PrivateRoute isLogged={this.props.isLogged} />}>
+                <Route path="/orders" element={<OrdersPage />} />
+                <Route path="/order/:id" element={<OrderPage />} />
+              </Route>
+
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+            </Routes>
         </BrowserRouter>
       </div>
     );
