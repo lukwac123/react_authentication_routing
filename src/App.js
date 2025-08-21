@@ -11,6 +11,7 @@ import { LogoutPage } from "./pages/login/logout";
 import { PrivacyPage } from "./pages/privacy/privacy";
 import { AboutPage } from "./pages/about/about";
 import { ContactPage } from "./pages/contact/contact";
+import { NotFoundPage } from "./pages/notFound/notFound"
 import "./assets/_all.scss";
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </BrowserRouter>
       </div>
