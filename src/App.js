@@ -1,28 +1,46 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { LoginPage } from "./pages/login/login";
 import { Navigation } from "./partials/navigation/navigation";
 import PropTypes from "prop-types";
 import {Row, Col, Container } from "react-bootstrap"
 
+import { OrdersPage } from "./pages/orders/orders";
+import { LogoutPage } from "./pages/login/logout";
+import { PrivacyPage } from "./pages/privacy/privacy";
+import { AboutPage } from "./pages/about/about";
+import { ContactPage } from "./pages/contact/contact";
+import "./assets/_all.scss";
+
 class App extends React.Component {
   render() {
     const { message, type } = this.props;
     return (
       <div className="mt-3">
-        <Container>
-          <Row>
-            <Col md={12}>
-              <Navigation />
-              <div>
-                {message !== undefined && (
-                  <div role="alert" className={`message ${type}`}>{message}</div>
-                )}
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <LoginPage />
+        <BrowserRouter>
+          <Container>
+            <Row>
+              <Col md={12}>
+                <Navigation />
+                <div>
+                  {message !== undefined && (
+                    <div role="alert" className={`message ${type}`}>{message}</div>
+                  )}
+                </div>
+              </Col>
+            </Row>
+          </Container>
+            <Routes>
+              <Route path="/" element={<OrdersPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/logout" element={<LogoutPage />} />
+              <Route path="/orders" element={<OrdersPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     );
   }

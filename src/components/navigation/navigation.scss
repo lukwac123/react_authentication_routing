@@ -1,0 +1,25 @@
+.navigation {
+    color: var(--blue-500);
+
+    &__elements {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        float: left;
+    }
+
+    &__element {
+        float: left;
+    }
+
+    &__link {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 1.5rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
