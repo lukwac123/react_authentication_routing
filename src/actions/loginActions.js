@@ -31,10 +31,16 @@ const login = (username, password) => {
                 localStorage.setItem("account", JSON.stringify(user));
                 dispatch(loginSuccess(user));
                 dispatch(messageBagActions.success("Zalogowano"));
+                setTimeout(() => {
+                    dispatch({ type: "MESSAGE_CLEAR" });
+                }, 1000);
             },
             error => {
                 dispatch(loginFailure(error));
                 dispatch(messageBagActions.error("Zły login lub hasło"));
+                setTimeout(() => {
+                    dispatch({ type: "MESSAGE_CLEAR" });
+                }, 1000);
             }
         );
     };
