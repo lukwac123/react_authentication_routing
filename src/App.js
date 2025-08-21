@@ -63,7 +63,8 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     message: state.messageBagReducer.message,
-    type: state.messageBagReducer.type
+    type: state.messageBagReducer.type,
+    isLogged: state.loginReducer.isLogged
   };
 }
 
