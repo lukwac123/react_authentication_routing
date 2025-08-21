@@ -13,26 +13,11 @@ const navigation = (props) => {
 
     const menus = {
         menuItems: [
-            {
-                title: "Zamówienia",
-                link: "/orders"
-            },
-            {
-                title: "Kontakt",
-                link: "/contact"
-            },
-            {
-                title: "Polityka bezpieczeństwa",
-                link: "/privacy"
-            },
-            {
-                title: "O nas",
-                link: "/about"
-            },
-            {
-                title: "Logowanie",
-                link: "/login"
-            }
+            { title: "Zamówienia", link: "/orders" },
+            { title: "Kontakt", link: "/contact" },
+            { title: "Polityka bezpieczeństwa", link: "/privacy" },
+            { title: "O nas", link: "/about" },
+            { title: isLogged ? "Wyloguj" : "Logowanie", link: isLogged ? "/logout" : "/login" }
         ]
     };
 

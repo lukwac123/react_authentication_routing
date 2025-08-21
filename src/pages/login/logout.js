@@ -1,12 +1,19 @@
-import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { loginActions } from "../../actions/loginActions";
+import { useNavigate } from "react-router-dom";
 
-const LogoutPage = () => (
-    <Container>
-        <Row>
-            <Col>Wylogowano.</Col>
-        </Row>
-    </Container>
-);
+const LogoutPage = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-export { LogoutPage };
+    useEffect(() => {
+        dispatch(loginActions.logout());
+        navigate("/login");
+    }, [dispatch, navigate]);
+
+    return <div>Wylogowywanie...</div>;
+};
+
+export default LogoutPage;
+

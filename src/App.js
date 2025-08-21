@@ -8,7 +8,7 @@ import {Row, Col, Container } from "react-bootstrap"
 
 import { OrdersPage } from "./pages/orders/orders";
 import { OrderPage } from "./pages/orders/order";
-import { LogoutPage } from "./pages/login/logout";
+import LogoutPage from "./pages/login/logout";
 import { PrivacyPage } from "./pages/privacy/privacy";
 import { AboutPage } from "./pages/about/about";
 import { ContactPage } from "./pages/contact/contact";
